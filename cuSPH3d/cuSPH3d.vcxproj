@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="device.cpp" />
+    <ClCompile Include="domain.cpp" />
+    <ClCompile Include="errlog.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="license.cpp" />
+    <ClCompile Include="output.cpp" />
+    <ClCompile Include="postproc.cpp" />
+    <ClCompile Include="sph.cpp" />
+    <ClCompile Include="terminal.cpp" />
+    <ClCompile Include="tinyxml2\tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="device.h" />
+    <ClInclude Include="domain.h" />
+    <ClInclude Include="errlog.h" />
+    <ClInclude Include="hlp.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="license.h" />
+    <ClInclude Include="methods\calcGridHash.cuh" />
+    <ClInclude Include="methods\calcGridPos.cuh" />
+    <ClInclude Include="methods\calcRelPosVelFreeSlip.cuh" />
+    <ClInclude Include="methods\calcRelPosVelNoSlip.cuh" />
+    <ClInclude Include="methods\copyParticles.cuh" />
+    <ClInclude Include="methods\hashSortReorder.cuh" />
+    <ClInclude Include="methods\interactions.cuh" />
+    <ClInclude Include="methods\interactions\interactionsNegativeOnWallFreeSlip.cuh" />
+    <ClInclude Include="methods\interactions\interactionsNegativeOnWallNoSlip.cuh" />
+    <ClInclude Include="methods\interactions\interactionsPositiveOnWallNoSlip.cuh" />
+    <ClInclude Include="methods\interactions\interactions_3NegativeOnWallNoSlip_1PositiveOnWallFreeSlip.cuh" />
+    <ClInclude Include="methods\kernels.cuh" />
+    <ClInclude Include="models\general\calcDispersedPhase\calcDispersedPhase.cuh" />
+    <ClInclude Include="models\general\calcHydrostaticPressure\calcHydrostaticPressure.cuh" />
+    <ClInclude Include="models\general\calcShearRate\calcShearRate.cuh" />
+    <ClInclude Include="models\general\calcSingleSolidParticleAcceleration\calcSingleSolidParticleAcceleration.cuh" />
+    <ClInclude Include="models\general\calcTimeStep\calcTimeStep.cuh" />
+    <ClInclude Include="models\general\calcTurbulentViscosity\calcTurbulentViscosity.cuh" />
+    <ClInclude Include="models\general\renormalizePressure\renormalizePressure.cuh" />
+    <ClInclude Include="models\general\smoothingDensity\smoothingDensity.cuh" />
+    <ClInclude Include="models\wcsphColagrossiLandrini.cuh" />
+    <ClInclude Include="models\wcsphHuAdams.cuh" />
+    <ClInclude Include="models\wcsphStandard.cuh" />
+    <ClInclude Include="models\wcsphSzewcOlejnik.cuh" />
+    <ClInclude Include="output.h" />
+    <ClInclude Include="postproc.h" />
+    <ClInclude Include="sph.h" />
+    <ClInclude Include="terminal.h" />
+    <ClInclude Include="tinyxml2\tinyxml2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="methods\copyParticles.cu" />
+    <CudaCompile Include="methods\gridHash.cu" />
+    <CudaCompile Include="methods\hashSortReorder.cu" />
+    <CudaCompile Include="methods\reorderDataAndFindStartCell.cu" />
+    <CudaCompile Include="methods\sortParticles.cu" />
+    <CudaCompile Include="models\general\calcDispersedPhase\calcDispersedPhaseAdvection.cu" />
+    <CudaCompile Include="models\general\calcDispersedPhase\calcDispersedPhaseFields.cu" />
+    <CudaCompile Include="models\general\calcHydrostaticPressure\calcHydrostaticPressure.cu" />
+    <CudaCompile Include="models\general\calcShearRate\calcShearRate.cu" />
+    <CudaCompile Include="models\general\calcSingleSolidParticleAcceleration\calcSingleSolidParticleAcceleration.cu" />
+    <CudaCompile Include="models\general\calcTimeStep\calcTimeStep.cu" />
+    <CudaCompile Include="models\general\calcTurbulentViscosity\calcTurbulentViscosity.cu" />
+    <CudaCompile Include="models\general\renormalizePressure\renormalizePressure.cu" />
+    <CudaCompile Include="models\general\smoothingDensity\smoothingDensity.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcAdvectionWCL.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcCurvatureWCL.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcInteractionWCL.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcNormalFromSmoothedColorWCL.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcNormalThresholdWCL.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcPressureWCL.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcSmoothedColorWCL.cu" />
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcXsphWCL.cu" />
+    <CudaCompile Include="models\wcsphHuAdams.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcAdvectionWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcNormalWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfaceTensionFromCurvatureWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcDensityWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcInitialDensityWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcInteractionWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcNormalFromSmoothedColorWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcNormalThresholdWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcPressureWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcSmoothedColorWHA.cu" />
+    <CudaCompile Include="models\wcsphHuAdams\calcXsphWHA.cu" />
+    <CudaCompile Include="models\wcsphStandard.cu" />
+    <CudaCompile Include="models\wcsphStandard\calcAdvectionWS.cu" />
+    <CudaCompile Include="models\wcsphStandard\calcDensityWS.cu" />
+    <CudaCompile Include="models\wcsphStandard\calcInteractionWS.cu" />
+    <CudaCompile Include="models\wcsphStandard\calcPressureWS.cu" />
+    <CudaCompile Include="models\wcsphStandard\calcXsphWS.cu" />
+    <CudaCompile Include="models\wcsphSzewcOlejnik.cu" />
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcAdvectionSO.cu" />
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcInteractionSO.cu" />
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcPressureSO.cu" />
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcSoilViscositySO.cu" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{010AA674-6D27-43B4-8C44-51A40889752A}</ProjectGuid>
+    <RootNamespace>cuSPH3d</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 7.5.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_52,sm_52</CodeGeneration>
+      <Include>-lcudadevrt</Include>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 7.5.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="TinyXml2">
+      <UniqueIdentifier>{ddae6be4-93eb-4246-b754-e53f52325621}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Methods">
+      <UniqueIdentifier>{415d5825-3d94-4c4c-8262-134756cd5312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Methods\Interactions">
+      <UniqueIdentifier>{ad1e5c9f-9efd-458e-bc3c-3db5c1ccaa7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{659d33a6-f0c3-41fc-8f8d-2c532d9fe404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\SphTartakovskyEtAl">
+      <UniqueIdentifier>{d08e91c2-ebcd-43cb-b3aa-47e3fef9a83e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\SphTartakovskyMeakin">
+      <UniqueIdentifier>{0a678ea9-7b75-4ef6-8638-570f03a3ac82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\WcsphColagrossiLandrini">
+      <UniqueIdentifier>{9be7769d-a2e2-48e7-97ab-b60eb7fe5ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\WcsphHuAdams">
+      <UniqueIdentifier>{c864819b-b3a9-48bc-b856-4937a2e2043b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General">
+      <UniqueIdentifier>{76a8e6c3-63cf-467f-ba13-c11899a2e855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\CalcTimeStep">
+      <UniqueIdentifier>{509c860c-be80-428f-a2a7-a615c1cce5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\CalcDispersedPhase">
+      <UniqueIdentifier>{5fb0d08f-7586-46e4-aabc-569fb57fff3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\RenormalizePressure">
+      <UniqueIdentifier>{ee765977-73ba-4e05-8b9b-8763b07ddb71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\WcsphSzewcOlejnik">
+      <UniqueIdentifier>{8b9718f3-68a8-417f-94f0-f664e4a72ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\CalcHydrostaticPressure">
+      <UniqueIdentifier>{75090565-01b6-4972-bc4f-70b3d79a19af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\SmoothHydrostaticPressure">
+      <UniqueIdentifier>{62bdd146-082c-4c0f-a60e-4763fccd9267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\CalcStrainTensor">
+      <UniqueIdentifier>{a3c82fb4-8cef-4f09-b709-af56ba5f8559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\SmoothingDensity">
+      <UniqueIdentifier>{3f787b35-0ccd-4039-a44b-b6c8567cdeab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\CalcChezyViscosity">
+      <UniqueIdentifier>{778db18d-77ea-4b75-873b-f769030970aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\CalcNumberOfCells">
+      <UniqueIdentifier>{17aeb83b-a9a0-4553-9359-2565e497002c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\WcsphStandard">
+      <UniqueIdentifier>{72a75342-cee1-4502-bb0a-90d5594d6e80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\WcsphStandardDispersedPhase">
+      <UniqueIdentifier>{ffe54e36-d504-4b4a-be7c-0d77f0dc0d7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\General\DispersedPhaseFluidParticleManager">
+      <UniqueIdentifier>{1507b444-ed56-43e8-8f22-98199042b1e9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tinyxml2\tinyxml2.cpp">
+      <Filter>TinyXml2</Filter>
+    </ClCompile>
+    <ClCompile Include="device.cpp" />
+    <ClCompile Include="domain.cpp" />
+    <ClCompile Include="errlog.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="output.cpp" />
+    <ClCompile Include="sph.cpp" />
+    <ClCompile Include="terminal.cpp" />
+    <ClCompile Include="license.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tinyxml2\tinyxml2.h">
+      <Filter>TinyXml2</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\interactions\interactions_2NegativeOnWallNoSlip_1PositiveOnWallFreeSlip.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\interactions\interactionsNegativeOnWallNoSlip.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\interactions\interactionsPositiveOnWallNoSlip.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\calcGridHash.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\calcGridPos.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\calcRelPosVelFreeSlip.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\calcRelPosVelNoSlip.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\hashSortReorder.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\kernels.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="models\sphTartakovskyEtAl\sphTartakovskyEtAl.cuh">
+      <Filter>Models\SphTartakovskyEtAl</Filter>
+    </ClInclude>
+    <ClInclude Include="models\sphTartakovskyMeakin\sphTartakovskyMeakin.cuh">
+      <Filter>Models\SphTartakovskyMeakin</Filter>
+    </ClInclude>
+    <ClInclude Include="models\wcsphColagrossiLandrini\wcsphColagrossiLandrini.cuh">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </ClInclude>
+    <ClInclude Include="models\wcsphHuAdams\wcsphHuAdams.cuh">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\calcTimeStep\calcTimeStep.cuh">
+      <Filter>Models\General\CalcTimeStep</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\calcDispersedPhase\calcDispersedPhase.cuh">
+      <Filter>Models\General\CalcDispersedPhase</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\renormalizePressure\renormalizePressure.cuh">
+      <Filter>Models\General\RenormalizePressure</Filter>
+    </ClInclude>
+    <ClInclude Include="device.h" />
+    <ClInclude Include="domain.h" />
+    <ClInclude Include="errlog.h" />
+    <ClInclude Include="hlp.h" />
+    <ClInclude Include="sph.h" />
+    <ClInclude Include="terminal.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="output.h" />
+    <ClInclude Include="methods\interactions.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\interactions\interactions_2NegativeOnWallNoSlip_1PositiveOnWallNoSlip.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="models\wcsphSzewcOlejnik\wcsphSzewcOlejnik.cuh">
+      <Filter>Models\WcsphSzewcOlejnik</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\interactions\interactions_2NegativeOnWallFreeSlip_1PositiveOnWallFreeSlip.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\interactions\interactionsNegativeOnWallFreeSlip.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\calcHydrostaticPressure\calcHydrostaticPressure.cuh">
+      <Filter>Models\General\CalcHydrostaticPressure</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\interactions\interactionsNoWall.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\smoothHydrostaticPressure\smoothHydrostaticPressure.cuh">
+      <Filter>Models\General\SmoothHydrostaticPressure</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\calcStrainTensor\calcStrainTensor.cuh">
+      <Filter>Models\General\CalcStrainTensor</Filter>
+    </ClInclude>
+    <ClInclude Include="methods\copyParticles.cuh">
+      <Filter>Methods</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\smoothingDensity\smoothingDensity.cuh">
+      <Filter>Models\General\SmoothingDensity</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\calcChezyViscosity\calcChezyViscosity.cuh">
+      <Filter>Models\General\CalcChezyViscosity</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\calcNumberOfCells\calcNumberOfCells.cuh">
+      <Filter>Models\General\CalcNumberOfCells</Filter>
+    </ClInclude>
+    <ClInclude Include="license.h" />
+    <ClInclude Include="methods\interactions\interactions_2NegativeOnWallNoSlip_2PositiveOnWallFreeSlip.cuh">
+      <Filter>Methods\Interactions</Filter>
+    </ClInclude>
+    <ClInclude Include="models\wcsphStandard\wcsphStandard.cuh">
+      <Filter>Models\WcsphStandard</Filter>
+    </ClInclude>
+    <ClInclude Include="models\wcsphStandardDispersedPhase\wcsphStandardDispersedPhase.cuh">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </ClInclude>
+    <ClInclude Include="models\general\dispersedPhaseFluidParticleManager\dispersedPhaseFluidParticleManager.h">
+      <Filter>Models\General\DispersedPhaseFluidParticleManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="methods\gridHash.cu">
+      <Filter>Methods</Filter>
+    </CudaCompile>
+    <CudaCompile Include="methods\hashSortReorder.cu">
+      <Filter>Methods</Filter>
+    </CudaCompile>
+    <CudaCompile Include="methods\reorderDataAndFindStartCell.cu">
+      <Filter>Methods</Filter>
+    </CudaCompile>
+    <CudaCompile Include="methods\sortParticles.cu">
+      <Filter>Methods</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyEtAl.cu">
+      <Filter>Models</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyMeakin.cu">
+      <Filter>Models</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini.cu">
+      <Filter>Models</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams.cu">
+      <Filter>Models</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandard.cu">
+      <Filter>Models</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyEtAl\calcAdvectionSTEA.cu">
+      <Filter>Models\SphTartakovskyEtAl</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyEtAl\calcDeformationSTEA.cu">
+      <Filter>Models\SphTartakovskyEtAl</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyEtAl\calcDensitySTEA.cu">
+      <Filter>Models\SphTartakovskyEtAl</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyEtAl\calcInitialDensitySTEA.cu">
+      <Filter>Models\SphTartakovskyEtAl</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyEtAl\calcInteractionSTEA.cu">
+      <Filter>Models\SphTartakovskyEtAl</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyEtAl\calcPressureSTEA.cu">
+      <Filter>Models\SphTartakovskyEtAl</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyMeakin\calcAdvectionSTM.cu">
+      <Filter>Models\SphTartakovskyMeakin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyMeakin\calcDeformationSTM.cu">
+      <Filter>Models\SphTartakovskyMeakin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyMeakin\calcDensitySTM.cu">
+      <Filter>Models\SphTartakovskyMeakin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyMeakin\calcInitialDensitySTM.cu">
+      <Filter>Models\SphTartakovskyMeakin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyMeakin\calcInteractionSTM.cu">
+      <Filter>Models\SphTartakovskyMeakin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\sphTartakovskyMeakin\calcPressureSTM.cu">
+      <Filter>Models\SphTartakovskyMeakin</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcAdvectionWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcCurvatureWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcInteractionWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcNormalFromSmoothedColorWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcNormalThresholdWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcPressureWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcSmoothedColorWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphColagrossiLandrini\calcXsphWCL.cu">
+      <Filter>Models\WcsphColagrossiLandrini</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcAdvectionWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcAreaWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcDensityWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcInteractionWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcMassWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcNormalFromSmoothedColorWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcNormalThresholdWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcPressureWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSmoothedColorWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfactantConcentrationWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfactantsDiffusionBulkWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfactantsDiffusionWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfactantsMassWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcXsphWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\calcTimeStep\calcTimeStep.cu">
+      <Filter>Models\General\CalcTimeStep</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\calcDispersedPhase\calcDispersedPhaseAdvection.cu">
+      <Filter>Models\General\CalcDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\calcDispersedPhase\calcDispersedPhaseFields.cu">
+      <Filter>Models\General\CalcDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\renormalizePressure\renormalizePressure.cu">
+      <Filter>Models\General\RenormalizePressure</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfactantGradientNormWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcAdvectionSO.cu">
+      <Filter>Models\WcsphSzewcOlejnik</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcInteractionSO.cu">
+      <Filter>Models\WcsphSzewcOlejnik</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcPressureSO.cu">
+      <Filter>Models\WcsphSzewcOlejnik</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphSzewcOlejnik.cu">
+      <Filter>Models</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcTurbulentViscositySO.cu">
+      <Filter>Models\WcsphSzewcOlejnik</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphSzewcOlejnik\calcSoilViscositySO.cu">
+      <Filter>Models\WcsphSzewcOlejnik</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\calcHydrostaticPressure\calcHydrostaticPressure.cu">
+      <Filter>Models\General\CalcHydrostaticPressure</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\smoothHydrostaticPressure\smoothHydrostaticPressure.cu">
+      <Filter>Models\General\SmoothHydrostaticPressure</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\calcStrainTensor\calcStrainTensor.cu">
+      <Filter>Models\General\CalcStrainTensor</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcNormalWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcCapillaryTensorWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfactantsGradientWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfaceTensionFromCurvatureWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphHuAdams\calcSurfaceTensionFromCapillaryTensorWHA.cu">
+      <Filter>Models\WcsphHuAdams</Filter>
+    </CudaCompile>
+    <CudaCompile Include="methods\copyParticles.cu">
+      <Filter>Methods</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\smoothingDensity\smoothingDensity.cu">
+      <Filter>Models\General\SmoothingDensity</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\calcChezyViscosity\calcChezyViscosity.cu">
+      <Filter>Models\General\CalcChezyViscosity</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\calcNumberOfCells\calcNumberOfCells.cu">
+      <Filter>Models\General\CalcNumberOfCells</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandard\calcAdvectionWS.cu">
+      <Filter>Models\WcsphStandard</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandard\calcInteractionWS.cu">
+      <Filter>Models\WcsphStandard</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandard\calcPressureWS.cu">
+      <Filter>Models\WcsphStandard</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandard\calcXsphWS.cu">
+      <Filter>Models\WcsphStandard</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcAdvectionParticlesWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcAdvectionWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcFluidVolumeFractionWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcInteractionFluidOnParticlesWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcInteractionParticlesOnFluidWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcInteractionWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcParticlesDensityAndVolumeFractionWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcPressureWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcXsphWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\setParticlesWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase.cu">
+      <Filter>Models</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\general\dispersedPhaseFluidParticleManager\dispersedPhaseFluidParticleManager.cu">
+      <Filter>Models\General\DispersedPhaseFluidParticleManager</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcSoilViscosityWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+    <CudaCompile Include="models\wcsphStandardDispersedPhase\calcTurbulentViscosityWSDP.cu">
+      <Filter>Models\WcsphStandardDispersedPhase</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>
