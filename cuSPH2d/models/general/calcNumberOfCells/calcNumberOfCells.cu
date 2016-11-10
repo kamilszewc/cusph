@@ -5,11 +5,11 @@
 *      Author: Kamil Szewc (kamil.szewc@gmail.com)
 */
 
-#include "../../../sph.h"
-#include "../../../hlp.h"
+#include <cuda.h>
 #include <thrust/device_vector.h>
 #include <thrust/extrema.h>
-#include <iostream>
+#include "../../../sph.h"
+#include "../../../hlp.h"
 
 struct compareSmoothingLength
 {
