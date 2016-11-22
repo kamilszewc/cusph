@@ -1,8 +1,10 @@
 CXX = g++
 CUARCH=sm_52
 CU = nvcc
-CXXFLAGS = -O2 -march=native -std=c++11
-CUFLAGS = -O2 -arch=$(CUARCH)
+CXXFLAGS = -O2 -march=native -std=c++11 -pipe
+CUFLAGS = -O2 -arch=$(CUARCH) -lineinfo -D_FORCE_INLINES
+INCLUDE = -I./common/inc/
+LIBS = -L/usr/lib/x86_64-linux-gnu/ -lcudart -lcudadevrt
 RM = rm -f
 
 ifdef debug
@@ -35,20 +37,16 @@ cusph: $(patsubst %.cpp, %.o, $(wildcard *.cpp)) \
        $(patsubst %.cu, %.o, $(wildcard models/sphTartakovskyMeakin/*.cu)) \
        $(patsubst %.cu, %.o, $(wildcard models/sphTartakovskyEtAl/*.cu)) \
        $(patsubst %.cu, %.o, $(wildcard models/wcsphStandardDispersedPhase/*.cu))
-	$(CU) $(CUFLAGS) $^ -dlink -o link.o 
-	$(CXX) $^ link.o -L/usr/local/cuda/lib64 -lcudart -lcudadevrt -o cusph
+	$(CU) $(CUFLAGS) $(INCLUDE) $^ -dlink -o link.o $(LIBS)
+	$(CXX) $(INCLUDE) $^ link.o -o cusph $(LIBS)
 	
-old:
-	$(CXX) $(CXXFLAGS) -I/usr/local/cuda/include -c device.cpp domain.cpp input.cpp output.cpp terminal.cpp license.cpp errlog.cpp tinyxml2/tinyxml2.cpp
-	$(CU) -O2 -arch=$(CUARCH) -std=c++11 models/*.cu models/general/calcChezyViscosity/*.cu models/general/calcNumberOfCells/*.cu models/general/calcDispersedPhase/*.cu models/general/renormalizePressure/*.cu models/general/calcStrainTensor/*.cu models/general/calcHydrostaticPressure/*.cu models/general/smoothHydrostaticPressure/*.cu models/general/smoothingDensity/*.cu models/general/calcTimeStep/*.cu models/wcsphStandard/*.cu models/wcsphStandardDispersedPhase/*.cu models/wcsphColagrossiLandrini/*.cu models/sphTartakovskyEtAl/*.cu models/wcsphHuAdams/*.cu models/wcsphSzewcOlejnik/*.cu models/sphTartakovskyMeakin/*.cu models/general/dispersedPhaseFluidParticleManager/*.cpp methods/*.cu *.o sph.cpp -o cusph
-
 %.o: %.cpp
-	$(CXX) -c $(CXXFLAGS) -I/usr/local/cuda/include $< -o $@
+	$(CXX) $(INCLUDE) -c $(CXXFLAGS) -I/usr/local/cuda/include $< -o $@ 
 
 %.o: %.cu
-	$(CU) $(CUFLAGS) -dc $< -o $@	
+	$(CU) $(CUFLAGS) $(INCLUDE) -dc $< -o $@	
 
 clean:
-	$(RM) *.o methods/*.o models/*.o models/general/calcDispersedPhase/*.o models/general/renormalizePressure/*.o models/general/calcChezyViscosity/*.o models/general/calcNumberOfCells/*.o models/general/calcHydrostaticPressure/*.o models/general/smoothHydrostaticPressure/*.o models/general/calcStrainTensor/*.o models/general/calcTimeStep/*.o models/general/smoothingDensity/*.o models/wcsphStandard/*.o models/wcsphStandardDispersedPhase/*.o models/wcsphColagrossiLandrini/*.o models/wcsphHuAdams/*.o models/wcsphSzewcOlejnik/*.o models/sphTartakovskyMeakin/*.o models/sphTartakovskyEtAl/*.o odels/general/dispersedPhaseFluidParticleManager/*.o tinyxml2/*.o cusph postproc/*.pyc postproc/postproc/*.pyc
+	$(RM) *.o methods/*.o models/*.o models/general/calcDispersedPhase/*.o models/general/renormalizePressure/*.o models/general/dispersedPhaseFluidParticleManager/*.o models/general/calcChezyViscosity/*.o models/general/calcNumberOfCells/*.o models/general/calcHydrostaticPressure/*.o models/general/smoothHydrostaticPressure/*.o models/general/calcStrainTensor/*.o models/general/calcTimeStep/*.o models/general/smoothingDensity/*.o models/wcsphStandard/*.o models/wcsphStandardDispersedPhase/*.o models/wcsphColagrossiLandrini/*.o models/wcsphHuAdams/*.o models/wcsphSzewcOlejnik/*.o models/sphTartakovskyMeakin/*.o models/sphTartakovskyEtAl/*.o odels/general/dispersedPhaseFluidParticleManager/*.o tinyxml2/*.o cusph postproc/*.pyc postproc/postproc/*.pyc
 mrproper: clean
 	$(RM) results/* logs/*
