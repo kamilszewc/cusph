@@ -20,15 +20,6 @@
 #include "../methods/copyParticles.cuh"
 #include "../errlog.h"
 
-struct is_position
-{
-	__host__ __device__
-	bool operator()(const Particle p)
-	{
-		return p.pos.y < 0.5;
-	}
-};
-
 void modelWcsphStandardDispersedPhase(int NOB, int TPB,
 	thrust::device_vector<Particle>& pVector,
 	Particle *pSort,
@@ -56,12 +47,12 @@ void modelWcsphStandardDispersedPhase(int NOB, int TPB,
 
 	static real internalTime = 0.0;
 	internalTime += parHost->DT;
-	if (internalTime > 0.02) {
+	if (internalTime > 0.065) {
 		DispersedPhaseFluidParticleManager dispersedPhaseFluidParticleManager(&pDispersedPhaseFluidVector, par, parHost);
 		//dispersedPhaseFluidParticleManager.AddParticle(1.0, 0.8, 2500.0, 0.05);
-		//dispersedPhaseFluidParticleManager.AddParticle(0.5+0.5*parHost->DR, 0.8, 1.5-0.5*parHost->DR, 0.8, 2500.0, 0.05);
+		dispersedPhaseFluidParticleManager.AddParticlesRow(1.0+0.875*parHost->DR, 0.5, 2.0, 0.5, 2500.0, 0.05);
 
-		dispersedPhaseFluidParticleManager.DelParticle(1);
+		//dispersedPhaseFluidParticleManager.DelParticle(1);
 
 		internalTime = 0.0;
 	}

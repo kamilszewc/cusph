@@ -33,23 +33,23 @@ __device__ static uint calcGridHash(
 
 	return (uint)(gridPos.y) * (uint)(par->NXC) + (uint)(gridPos.x);
 }
-//__device__ static uint calcGridHash(
-//	int2 gridPos,    // input: cell cooridinates
-//	Parameters *par) // input: parameters
-//{
-//	if (par->NXC % 2 == 0)
-//	{
-//		gridPos.x = gridPos.x & (par->NXC - 1);
-//		gridPos.y = gridPos.y & (par->NYC - 1);
-//		return __umul24(gridPos.y, par->NXC) + gridPos.x;
-//	}
-//	else
-//	{
-//		gridPos.x = gridPos.x % (par->NXC - 1);
-//		gridPos.y = gridPos.y % (par->NYC - 1);
-//		return (uint)(gridPos.y) * (uint)(par->NXC) + (uint)(gridPos.x);
-//	}
-//	
-//}
+/*__device__ static uint calcGridHash(
+	int2 gridPos,    // input: cell cooridinates
+	Parameters *par) // input: parameters
+{
+	if (par->NXC % 2 == 0)
+	{
+		gridPos.x = gridPos.x & (par->NXC - 1);
+		gridPos.y = gridPos.y & (par->NYC - 1);
+		return __umul24(gridPos.y, par->NXC) + gridPos.x;
+	}
+	else
+	{
+		gridPos.x = gridPos.x % (par->NXC - 1);
+		gridPos.y = gridPos.y % (par->NYC - 1);
+		return (uint)(gridPos.y) * (uint)(par->NXC) + (uint)(gridPos.x);
+	}
+	
+}*/
 
 #endif

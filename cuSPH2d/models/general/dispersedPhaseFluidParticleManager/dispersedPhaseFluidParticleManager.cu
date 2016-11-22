@@ -104,7 +104,7 @@ void DispersedPhaseFluidParticleManager::SetParticleProperties(Particle& p, Para
 	p.pos.x = x; p.rh_pos.x = 0.0;
 	p.pos.y = y; p.rh_pos.y = 0.0;
 	p.vel.x = 0.0; p.rh_vel.x = 0.0;
-	p.vel.y = 0.0; p.rh_vel.y = 0.0;
+	p.vel.y = -2.0; p.rh_vel.y = 0.0;
 	p.vel_s.x = 0.0; p.vel_s.y = 0.0;
 	p.h = parHost->H; p.rh_h = 0.0;
 	p.d = di * o; p.di = di; p.rh_d = 0.0; p.d_s = 0.0;

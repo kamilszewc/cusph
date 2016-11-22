@@ -28,7 +28,7 @@ void hashSortReorder(
 	STARTLOG("logs/methods.log");
 
 	gridHash <<<NOB, TPB>>>(gridParticleHash, gridParticleIndex, p, par, numParticles);
-	HANDLE_CUDA_KERNEL_RUNTIME_ERROR("gridHash");
+	//HANDLE_CUDA_KERNEL_RUNTIME_ERROR("gridHash");
 
 	sortParticles(gridParticleHash, gridParticleIndex, numParticles);
 

@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
 	double *t;
 	switch (argc) {
 	case 1:
-		domain = new Domain(CASE, 2.0, 16);
+		domain = new Domain(CASE, 2.4, 32);
 		parHost = domain->GetParameters();
 		pHost = domain->GetParticles();
 		pDispersedPhaseHost = domain->GetParticlesDispersedPhase();

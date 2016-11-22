@@ -1,5 +1,5 @@
 CXX = g++
-CUARCH=sm_35
+CUARCH=sm_52
 CU = nvcc
 CXXFLAGS = -O2 -march=native -std=c++11
 CUFLAGS = -O2 -arch=$(CUARCH)

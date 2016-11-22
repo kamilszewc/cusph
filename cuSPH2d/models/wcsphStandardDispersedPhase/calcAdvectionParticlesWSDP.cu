@@ -16,11 +16,11 @@ __global__ void calcAdvectionParticlesWSDP(Particle *pPDPF, Parameters *par)
 		pPDPF[tid].pos.y += par->DT * pPDPF[tid].vel.y;
 		pPDPF[tid].d += par->DT * pPDPF[tid].rh_d;
 
-		/*if (pPDPF[tid].pos.y <= 0.2)
+		if (pPDPF[tid].pos.y <= 0.0001)
 		{
 			pPDPF[tid].vel.y = -pPDPF[tid].vel.y;
-			pPDPF[tid].pos.y = 0.2;
-		}*/
+			pPDPF[tid].pos.y = 0.0001;
+		}
 
 		tid += blockDim.x * gridDim.x;
 	}

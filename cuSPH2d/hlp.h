@@ -11,7 +11,7 @@
 
 #include <math.h>
 
-#define PRECISION_DOUBLE
+#define DOUBLE_FLOAT 
 
 #if defined(PRECISION_FLOAT)
 	typedef float real;

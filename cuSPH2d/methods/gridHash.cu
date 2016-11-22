@@ -25,7 +25,7 @@ __global__ void gridHash(
 {
 	uint tid = threadIdx.x + blockIdx.x*blockDim.x;
 	while (tid < N) {
-		volatile real2 pos = p[tid].pos;
+		real2 pos = p[tid].pos;
 
 		int2 gridPos = calcGridPos(MAKE_REAL2(pos.x, pos.y), par);
 		uint hash = calcGridHash(gridPos, par);

@@ -156,7 +156,7 @@ void Domain::InitDefaultGeometry(int CASE)
 	case 86: _par.XCV = 60.0; _par.YCV = 20.0; break; // Falling sand 2
 	case 100: _par.XCV = 1.0; _par.YCV = 1.0; break; // Dispersed phase in static box
 	case 101: _par.XCV = 1.0; _par.YCV = 1.0; break; // Dispersed phase in static box
-	case 102: _par.XCV = 2.0; _par.YCV = 1.0; break; // Dispersed phase in static box
+	case 102: _par.XCV = 3.0; _par.YCV = 1.0; break; // Dispersed phase in static box
 	case 103: _par.XCV = 2.0; _par.YCV = 1.0; break; // Dispersed phase in static box
 	case 199: _par.XCV = 1.0; _par.YCV = 1.0; break; // Periodic box with wavy pattern
 	case 200: _par.XCV = 8.0; _par.YCV = 1.0; break; // Experiment with wave maker
@@ -1515,7 +1515,7 @@ void Domain::InitCase(int CASE)
 			std::vector<Particle> p;
 			for (int i = 0; i < _par.N; i++)
 			{
-				if (_p[i].pos.y < 0.8)
+				if (_p[i].pos.y < 1.8)
 				{
 					p.push_back(_p[i]);
 				}
@@ -1569,8 +1569,8 @@ void Domain::InitCase(int CASE)
 		break;
 	case 102: // Dispersed phase in static box
 		_par.T_BOUNDARY_PERIODICITY = 0;
-		_par.END_TIME = 6.0;
-		_par.DT = 0.000005;
+		_par.END_TIME = 5.0;
+		_par.DT = 0.000001;
 		_par.INTERVAL_TIME = 0.01;
 		_par.G_Y = -9.81;
 		_par.T_DISPERSED_PHASE_FLUID = 1;
@@ -1581,7 +1581,7 @@ void Domain::InitCase(int CASE)
 			std::vector<Particle> p;
 			for (int i = 0; i < _par.N; i++)
 			{
-				if (_p[i].pos.y < 0.8)
+				if (_p[i].pos.y < 0.5)
 				{
 					p.push_back(_p[i]);
 				}
@@ -1598,7 +1598,7 @@ void Domain::InitCase(int CASE)
 			p.m = _par.XCV * _par.YCV * p.di / (_par.NX * _par.NY);
 			p.s = 20.0;
 			p.b = pow2(p.s) * p.di / p.gamma;
-			p.d = p.d * pow(1.0 + 1000.0*fabs(_par.G_Y)*(0.8 - p.pos.y) / p.b, 1.0 / 7.0);
+			p.d = p.d * pow(1.0 + 1000.0*fabs(_par.G_Y)*(0.5 - p.pos.y) / p.b, 1.0 / 7.0);
 			p.o = 1.0;
 		}
 
@@ -1606,7 +1606,7 @@ void Domain::InitCase(int CASE)
 		SetParticles(_pDispersedPhaseFluid);
 		for (auto& pd : _pDispersedPhaseFluid)
 		{
-			pd.o = 0.06;
+			pd.o = 0.05;
 			pd.di = 2500.0;
 			pd.d = pd.o * pd.di;
 			pd.m = _par.XCV * _par.YCV * pd.d / (_par.NX * _par.NY);
@@ -1616,8 +1616,8 @@ void Domain::InitCase(int CASE)
 			std::vector<Particle> p;
 			for (int i = 0; i < _par.N_DISPERSED_PHASE_FLUID; i++)
 			{
-				if ((_pDispersedPhaseFluid[i].pos.y > 0.6) && (_pDispersedPhaseFluid[i].pos.y < 0.8)
-					&& (_pDispersedPhaseFluid[i].pos.x > 0.5) && (_pDispersedPhaseFluid[i].pos.x < 1.5) )
+				if ((_pDispersedPhaseFluid[i].pos.y > 0.475) && (_pDispersedPhaseFluid[i].pos.y < 0.5)
+					&& (_pDispersedPhaseFluid[i].pos.x > 1.0) && (_pDispersedPhaseFluid[i].pos.x < 2.0) )
 				{
 					p.push_back(_pDispersedPhaseFluid[i]);
 				}
@@ -1628,12 +1628,12 @@ void Domain::InitCase(int CASE)
 
 		for (auto& p : _p)
 		{
-			if ((p.pos.y > 0.6) && (p.pos.y < 0.8) && (p.pos.x > 0.5) && (p.pos.x < 1.5))
+			if ((p.pos.y > 0.475) && (p.pos.y < 0.5) && (p.pos.x > 1.0) && (p.pos.x < 2.0))
 			{
-				p.o = 0.94;
+				p.o = 0.95;
 				p.d = p.o * p.di;
 				p.m = _par.XCV * _par.YCV * p.d / (_par.NX * _par.NY);
-				p.d = p.d * pow(1.0 + 1000.0*fabs(_par.G_Y)*(0.8 - p.pos.y) / p.b, 1.0 / 7.0);
+				p.d = p.d * pow(1.0 + 1000.0*fabs(_par.G_Y)*(0.5 - p.pos.y) / p.b, 1.0 / 7.0);
 			}
 		}
 
